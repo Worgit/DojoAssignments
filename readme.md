@@ -1,0 +1,1 @@
+These are git folders for my CodingDojo projects.
