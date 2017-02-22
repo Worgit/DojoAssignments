@@ -1,0 +1,11 @@
+cd Desktop/DojoAssignments
+git init
+git add .
+git commit -m “first commit”
+git remote add origin https://github.com/Worgit/DojoAssignments.git
+git push -u origin master
+touch readme.md
+git status
+git add read.md
+git commit -m “Added readme.”
+git push -u origin master
