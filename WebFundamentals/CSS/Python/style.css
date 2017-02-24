@@ -88,15 +88,13 @@ body img{
 	text-align: center;
 	width: 475px;
 	vertical-align: top;
-}/*
+}
 .help h4{
-	display: inline-block;
-	background-color: cornflowerblue;
-	padding-left: 150px;
-	padding-right: 150px;
-	padding-top: 5px;
-	padding-bottom: -5px;
-}*/
+	display:inline-block;
+	border-top: 2px solid cornflowerblue;
+	padding-left: 150px; 
+	padding-right: 150px; 
+}
 .help p{
 	font-size: 12px;
 	width: 300px;
