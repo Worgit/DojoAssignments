@@ -1,0 +1,141 @@
+.{
+	reset
+}
+body{
+	font-family: arial;
+}
+.blue{
+	color: skyblue;
+}
+#red{
+	color: red;
+}
+h1{
+	display: inline;
+	margin-bottom 0px:
+	vertical-align: top;
+}
+h2{
+	background-color: steelblue;
+	color: white;
+	margin-top: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+}
+h1, h2{
+	font-weight: normal;
+}
+#help{
+	width: 150px;
+	display: inline-block;
+	border-bottom: 1px solid black;
+}
+#help h4{
+	font-size: 12px;
+}
+#help p{
+	font-size: 11px;
+	font-weight: bold;
+}
+#help h5, #help h6{
+	display: inline block;
+	color: white;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	border-radius: 5px;
+	margin: 0px;
+}
+#help h5{
+	background-color: steelblue;
+}
+#help h6{
+	background-color: orange;
+	margin-bottom: 20px;
+}
+#contact{
+	display:inline-block;
+	border-bottom: 1px solid black;
+	vertical-align: top;
+	margin-left: 30px;
+	width: 90%;
+}
+#contact img{
+	margin-top: 15px;
+}
+#dns{
+	display:inline-block;
+	vertical-align: top;
+	margin-right: 85%;
+}
+#dng img{
+	margin-top: 0px;
+}
+#dns p, #bigthree, #bigthree img, #content{
+	display:inline-block;
+}
+#phone{
+	display: inline-block;
+	vertical-align: top;
+}
+#phone p{
+	font-size: 8px;
+}
+h3{
+	color: steelblue;
+}
+#phone h3{
+	margin: 0px;
+}
+#client{
+	display: inline-block;
+	margin-left: 40px;
+	position: relative;
+	bottom: 90px;
+}
+#client p, #client ul, #result p, #result ol, #content p{
+	font-size: 12px;
+}
+#ad{
+	text-align: center;
+	display: inline-block;
+	width: 150px;
+	vertical-align: top;
+	background-image: url("ad_background.png");
+	margin-top: 20px;
+}
+#ad h3{
+	color:white;
+}
+#ad p{
+	display: inline-block;
+	width: 100px;
+	color: white;
+	background-color: skyblue;
+	font-size: 11px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+}
+#result{
+	display:inline-block;
+	vertical-align: bottom;
+	margin-left:195px;
+	position: relative;
+	bottom: 90px;
+}
+#bigthree{
+	border-top: 4px solid royalblue;
+	border-left: 4px solid royalblue;
+	border-right: 4px solid royalblue;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-left: 200px;
+	
+}
