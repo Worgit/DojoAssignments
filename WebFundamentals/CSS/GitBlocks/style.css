@@ -1,0 +1,28 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+#wrapper{
+	background-color: antiquewhite;
+	width: 737px;
+}
+#header img, #header h1{
+	display: inline-block;
+}
+#header{
+	margin-left: 100px;
+}
+.white{
+	background-color: skyblue;
+	display: inline-block;
+	padding: 16px;
+	margin: 3px;
+	border: 3px solid black;
+}
+.red{	
+	background-color: salmon;
+	display: inline-block;
+	padding: 16px;
+	margin: 3px;
+	border: 3px solid black;
+}
