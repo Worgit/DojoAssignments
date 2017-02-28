@@ -1,0 +1,64 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+#square{
+	background-color: blue;
+	width: 140px;
+	height: 140px;
+}
+#circle{
+	background-color: blue;
+	width: 140px;
+	height: 140px;
+	border-radius: 140px;
+}
+#triangle{
+	display: inline-block;
+	padding-top: 100px;
+}
+#trianglemiddle{
+	background-color: blue;
+	width: 140px;
+	height: 140px;
+	display:inline-block;
+}
+#triangleleft{
+	background-color: white;
+	width: 160px;
+	height: 210px;
+	display:inline-block;
+	transform: rotate(15deg);
+	position: relative;
+	left: 75px;
+	bottom: 5px;
+}
+#triangleright{
+	background-color: white;
+	width: 160px;
+	height: 210px;
+	display:inline-block;
+	transform: rotate(345deg);
+	position: relative;
+	right: 75px;
+	bottom: 5px;
+}
+#pacman{
+	padding-top: 100px;
+}
+#paccirc{
+	display:inline-block;
+	background-color: blue;
+	width: 140px;
+	height: 140px;
+	border-radius: 140px;
+}
+#mouth{
+	display:inline-block;
+	background-color: white;
+	width: 140px;
+	height: 140px;
+	transform: rotate(45deg);
+	position: relative;
+	right: 40px;
+}
