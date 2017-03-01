@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>JQuery functions</title>
+		<meta name="description" content="JavaScript">
+		<style>
+			.bold{
+				background-color: skyblue;
+			}
+			span{
+				background-color: blue;
+			}
+		</style>
+		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type = "text/javascript">
+			$(document).ready(function(){
+				$('h1').click(function(){
+					alert("You did it!");
+				})
+				$('#catch').click(function(){
+					$('#catch').hide(function(){
+					})
+				})
+				$('#unhide').click(function(){
+					$('#catch').show(function(){
+					})
+				})
+				$("button").click(function(){
+					$("#hidden p").toggle();
+				})
+				$("#listclick").click(function(){
+					$("#table p").slideDown("slow");
+				})
+				$("#defeat").click(function(){
+					$("#monster").slideUp("slow");
+				})
+				$("#move").click(function(){
+					$("#door").slideToggle("slow");
+				})
+				$("#fortune p").click(function(){
+					$("#fortune h3").fadeIn("slow");
+				})
+				$("#fortune h4").click(function(){
+					$("#fortune h3").fadeOut("slow");
+				})
+				$("#enhance").hover(function(){
+					$("#enhance p").addClass ("bold");},
+					function(){$("#enhance p").removeClass ("bold");
+				})
+				$("h2").before("A ");
+				$("h2").append(" a ");
+				$("div.innards").html();
+				var test = $("span").attr("class");
+				$("h2").after(test);
+				var current = $("input").val();
+				$("h1").after(current);
+				var type = $("#hidden").text();
+				$("form").after(type);
+				$("#nothing").data("something", "hidden stuff");
+				var last = $("#nothing").data("something");
+				$("button").after(last);
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Click here!</h1>
+		<div id = "catch">
+			<p>Catch me if you can!</p>
+		</div>
+		<div id = "unhide">
+			<p>Click to unhide.</p>
+		</div>
+		<button>Switch</button>
+		<div id = "hidden">
+			<p style = "display: none">1/4 library cards</p>
+			<p>Click the above button to dig for treasure.</p>
+		</div>
+		<div id = "listclick">
+			<p>Reveal Groceries</p>
+		</div>
+		<div id = "table">
+			<p style = "display: none">"Banannas"</p>
+		</div>
+		<div id = "monster" style = "width: 50px;
+		height: 50px;
+		background-color: blue;">
+		</div>
+		<div id = "defeat">
+			<p>Click to defeat the monster!</p>
+		</div>
+		<div id = "door" style = "width: 50px;
+		height: 50px;
+		background-color: skyblue;">
+		</div>
+		<div id = "move">
+			<p>Click to open/close the door!</p>
+		</div>	
+		<div id = "fortune">
+			<p>Click to read your verdict</p>
+			<h3 style = "display: none">GUILTY</h3>
+			<h4>Click to erase your verdict</h4>
+		</div>	
+		<div id = "enhance">
+			<p>hover to enhance</p>
+		</div>
+		<h2>Bananna</h2>
+		<div class = "innards">
+			<p><span class = test>You're not supposed to be here.</span></p>
+		</div>
+		<form>
+			<input type = "text" id = "search_box" name = "search" value = "search">
+		</form>	
+		<div id = nothing>
+		</div>
+	</body>
+</html>
