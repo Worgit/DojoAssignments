@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Users</title>
+		<meta name="description" content="users">
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			table{
+				border: 1px solid black;
+			}
+			th{
+				margin: 10px;
+			}
+			h1{
+				border-bottom: 2px solid grey;
+				margin-bottom: 20px;
+				margin-top: 50px;
+				margin-left: 10px;
+			}
+			form{
+				display: inline-block;
+				width: 50px;
+				margin-left: 10px;
+			}
+			input{
+				display: inline-block;
+			}
+			
+		</style>
+		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type = "text/javascript">
+			$(document).ready(function(){
+				$("form").submit(function(){//gets values from forms
+					var first = $("#firstname").val();
+					var last = $("#lastname").val();
+					var email = $("#email").val();
+					var contact = $("#contact").val();//sets values from forms
+					$("#first").html(first);
+					$("#last").html(last);
+					$("#emailid").html(email);
+					$("#contactid").html(contact);
+					return false;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email Address</th>
+					<th>Contact#</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><span id = "first"></span></td>
+					<td><span id = "last"></span></td>
+					<td><span id = "emailid"></span></td>
+					<td><span id = "contactid"></span></td>
+				</tr>
+			</tbody>
+		</table>
+		<h1>Add User</h1>
+		<form id = "form1">
+			First Name: <input type  = "text" id = "firstname" value = "First Name">
+			Last Name: <input type  = "text" id = "lastname" value = "Last Name">
+			Email address: <input type  = "text" id = "email" value = "Email">
+			Contact No.:<input type  = "text" id = "contact" value = "Phone #">
+			<input type = "submit" value = "Add User">
+		</form>
+	</body>
+</html>

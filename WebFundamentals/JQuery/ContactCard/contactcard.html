@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Contact Card</title>
+		<meta name="description" content="contactcard">
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#form1{
+				width: 200px;
+				display: inline-block;
+				margin: 10px;
+			}
+			#form1 input{
+				display: inline-block;
+				margin: 10px;
+			}
+			#form1 textarea{
+				display: inline-block;
+				margin
+				width: 100px;
+				height: 50px;
+			}
+			#descriptions{
+				display: inline-block:
+				width: 100px;
+				float: right;
+				margin: 10px;
+			}
+			.description{
+				width: 400px;
+				background-color: lightgrey;
+				border-radius: 5px;
+				margin: 10px;
+				
+			}
+			.description h4{
+				display: inline-block;
+				font-weight: normal;
+			}
+			.description p{
+				display: none;
+			}
+			table{			
+		</style>
+		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type = "text/javascript">
+			$(document).ready(function(){
+				$("form").submit(function(){//gets values from forms
+					var first = $("#firstname").val();
+					var last = $("#lastname").val();
+					var desc = $("#desc").val();
+					$("#descriptions").append("<div class = 'description'><h4>" + 
+					first + " " + last + "<br>Click for description</h4><p>" +
+					desc + "</p></div>");
+					return false;
+				});
+				$(document).on("click", "h4", function(){
+					$(this).css("display", "none");
+					$(this).siblings().css("display", "block");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form id = "form1">
+			First Name: <input type  = "text" id = "firstname" value = "First Name">
+			Last Name: <input type  = "text" id = "lastname" value = "Last Name">
+			Description: <textarea name="description" id = "desc">Enter description:</textarea>
+			<input type = "submit" value = "Add User">
+		</form>
+		<div id = "descriptions">
+		</div>
+	</body>
+</html>
