@@ -39,10 +39,8 @@
 					var last = $("#lastname").val();
 					var email = $("#email").val();
 					var contact = $("#contact").val();//sets values from forms
-					$("#first").html(first);
-					$("#last").html(last);
-					$("#emailid").html(email);
-					$("#contactid").html(contact);
+					$("tbody").append("<tr><td>" + first + "</td><td>" + last + 
+					"</td><td>" + email + "</td><td>" + contact + "</td></tr>");
 					return false;
 				});
 			});
@@ -59,12 +57,6 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><span id = "first"></span></td>
-					<td><span id = "last"></span></td>
-					<td><span id = "emailid"></span></td>
-					<td><span id = "contactid"></span></td>
-				</tr>
 			</tbody>
 		</table>
 		<h1>Add User</h1>
