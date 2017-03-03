@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Gen6 National Dex</title>
+		<meta name="description" content="almost all of them">
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.pokedex{
+				width: 80%;
+				display: inline-block;
+			}
+			#pokemon{
+				width: 150px;
+				height: 400px;
+				border: 20px solid red;
+				font-family: arial;
+				display: inline-block;
+				text-align: center;
+				vertical-align: top;
+			}
+		</style>
+		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type = "text/javascript">
+			$(document).ready(function(){
+				for(var i = 1; i <= 718; i++){
+					$(".pokedex").append("<img id = '" + i + "' src='http://pokeapi.co/media/img/" + 
+					i + ".png'>");
+				}
+				$("div.pokedex").on("click", "img", function(){
+					var id = $(this).attr("id");
+					var url = "http://pokeapi.co/api/v1/pokemon/" + id + "/";
+					$.get(url, function(res){
+						var html = "<h2>";
+						html += res.name;
+						html += "</h2>";
+						html += "<img src='http://pokeapi.co/media/img/" + id + ".png'>";
+						html += "<h4>Types</h4><ul>";
+						for(var j = 0; j < res.types.length; j++){
+							html += "<li>" + res.types[j].name + "</li>";
+						}
+						html += "</ul><h4>Height</h4><p>";
+						html += res.height;
+						html += "</p><h4>Weight</h4><p>";
+						html += res.weight;
+						html += "</p>";
+						$("#pokemon").html(html);
+					}, "json");
+				
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class = "pokedex">
+		</div>
+		<div id = "pokemon">
+		</div>
+	</body>
+</html>

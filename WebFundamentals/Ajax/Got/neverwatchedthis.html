@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>some obscure show</title>
+		<meta name="description" content="fire & ice don't mix well">
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			img{
+				margin: 10px;
+			}
+			#house{
+				border: 1px solid black;
+				width: 500px;
+				margin: 10px;
+			}
+			#house p, h3{
+				margin: 5px;
+			}
+		</style>
+		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type = "text/javascript">
+			$(document).ready(function() {
+				$("img").click(function(){
+					var house = "";
+					var id = this.id;
+					if(id === "targaryen"){
+						house = "378";
+					}
+					else if(id === "lannister"){
+						house = "229";
+					}
+					else if(id === "baratheon"){
+						house = "17";
+					}
+					else{
+						house = "362";
+					}
+					$.get("http://anapioficeandfire.com/api/houses/" + house, function(res){
+						$("#name").text("Name: " + res.name);
+						$("#words").text("Words: " + res.words);
+						$("#titles").text("Titles: " + res.titles);
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img id = "stark" alt = "stark" src = "stark.jpg" width="200" height="100">
+		<img id = "targaryen" alt = "targaryen" src = "targaryen.jpg" width="200" height="100">
+		<img id = "lannister" alt = "lannister" src = "lannister.jpg" width="200" height="100">
+		<img id = "baratheon" alt = "baratheon" src = "baratheon.png" width="200" height="100">
+		<div id = "house">
+			<h3>House Details</h3>
+			<p id = "name">Name:</p>
+			<p id = "words">Words:</p>
+			<p id = "titles">Titles:</p>
+		</div>
+	</body>
+</html>
