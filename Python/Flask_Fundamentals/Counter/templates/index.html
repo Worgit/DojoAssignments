@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Survey</title>
+		<style>
+			body{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Counter</h1>
+		<p>{{session['number']}} times</p>
+		<form action = "/ninja" method = "post">
+			<input type = submit value = "ninja" id = "ninja">
+		</form>
+		<form action = "/reset" method = "post">
+			<input type = submit value = "reset" id = "reset">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    	<!-- if there is a random number -->
+    	{% if session['guess'] %}
+    		<!-- if the guessed number des not equal the random number -->
+			{% if session['guess'] != session['number'] %}
+				<div id = "box" style="background-color:red;">
+				{% if session['guess'] < session['number'] %}
+					<h1>Too low!</h1>
+				{% else %}
+					<h1>Too high!</h1>
+				{% endif %}
+			{% else %}
+				<div id = "box" style="background-color:green;">
+					<h1>{{session['guess']}} was the number!</h1>
+					<div id = "space" style = "height:100px"></div>
+					<form id="again" action = "/reset" method = "post">
+						<input id = "reset" type='submit' value = "Play Again">
+					</form>
+				</div>
+			{% endif %}
+		{% endif %}
+    </div>
+      <form id="play" action = "/" method = "post">
+        <input id="txt" type='text' name='guess'>
+        <input id="sub" type='submit' name='submit'>
+      </form>
+      <div id="hide">
+      </div>
+  </body>
+</html>
