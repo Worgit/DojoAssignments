@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+  	<style>
+  		.{
+  			margin: 0px;
+  			padding: 0px;
+  		}
+  		#mainwrapper{
+  			/*width: 600px;*/
+  		}
+  		.box{
+  			text-align: center;
+  			display: inline-block;
+  			width: 175px;
+  			height: 150px;
+  			border: 1px solid black;
+  			margin: 5px;
+  		}
+  		#activities{
+  			border: 1px solid black;
+  			width: 753px;
+  			overflow: scroll;
+  			height: 100px;
+  		}
+  		 #activities p{
+  			margin: 10px;
+  		}
+  		.red{
+  			color: red;
+  		}
+  		.green{
+  			color: green;
+  		}
+  	</style>
+  </head>
+  <body>
+  	<div id = "mainwrapper">
+		<p>Your Gold: {{session['gold']}}</p>
+		<div class = "box">
+			<h2>Farm</h2>
+			<p>(earns 10-20 gold)</p>
+			<form id = farm action = "/process_money" method = "post">
+				<input type = "hidden" name = "submit" value = "house">
+				<input type = "submit" value = "Find Gold!">
+			</form>
+		</div>
+		<div class = "box">
+			<h2>Cave</h2>
+			<p>(earns 5-10 gold)</p>
+			<form id = cave action = "/process_money" method = "post">
+				<input type = "hidden" name = "submit" value = "cave">
+				<input type = "submit" value = "Find Gold!">
+			</form>
+		</div>
+		<div class = "box">
+			<h2>House</h2>
+			<p>(earns 2-5 gold)</p>
+			<form id = house action = "/process_money" method = "post">
+				<input type = "hidden" name = "submit" value = "house">
+				<input type = "submit" value = "Find Gold!">
+			</form>
+		</div>
+		<div class = "box">
+			<h2>Casino</h2>
+			<p>(earns/takes 0-50 gold)</p>
+			<form id = casino action = "/process_money" method = "post">
+				<input type = "hidden" name = "submit" value = "casino">
+				<input type = "submit" value = "Find Gold!">
+			</form>
+		</div>
+		<div id = "wrapper">
+			<p>Activities:</p>
+			<div id = "activities">
+				<p>{{session['activities']|safe}}</p>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Survey</title>
+		<style>
+			.{
+				margin: 0px;
+				padding: 0px;
+			}
+			#wrapper{
+				margin-left: auto;
+				margin-right: auto;
+				padding: 3px;
+				width: 300px;
+				/*height: 250px;*/
+				border: 2px solid black;
+			}
+			#area{
+				width: 230px;
+				/*overflow: scroll;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "wrapper">
+			<h3>Submitted Info</h3>
+			<p>Dojo Location: {{session['dojo']}}</p>
+			<p>Favorite Language: {{session['language']}}</p>
+			<div id = "area">
+			{% with messages = get_flashed_messages() %}
+    			{% if messages %}
+      				{% for message in messages %}
+        				<p>{{ message }}</p>
+      				{% endfor %}
+    			{% endif %}
+  			{% endwith %}
+			</div>
+			<form action = "/back" method = "post">
+				<input id = "button" type = "submit" value = "Go Back">
+			</form>
+		</div>
+	</body>
+</html>
