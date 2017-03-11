@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <!-- <link rel="stylesheet" type="text/css" href="../static/style.css"> -->
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div id="warning" style='background-color:red'>
+            <p>{{message}}</p>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form id='mail' action='/process' method='POST'>
+      <label>Email:</label>
+      <input type='text' name='email'>
+      <input type='submit' value='submit'>
+    </form>
+  </body>
+  </html>
