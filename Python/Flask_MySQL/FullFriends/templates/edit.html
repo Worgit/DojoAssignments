@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Friend Edit</title>
+</head>
+<body>
+	<!-- with all the data we can then construct a more structured output -->
+	<p>ID: {{ friend['id'] }}</p>
+	<p>First Name: {{ friend['first_name'] }}</p>
+	<p>Last Name: {{ friend['last_name'] }}</p>
+	<p>Email: {{ friend['last_name'] }}</p>
+  <h2>Edit a Friend</h2>
+  <form action='/friends/update' method='POST'>
+    <label for="first_name">First Name:<input type="text" name="first_name" id="first_name" value = {{ friend['first_name'] }}></label>
+    <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name" value = {{ friend['last_name'] }}></label>
+    <label for="email">Email:<input type="text" name="email" id="email" value = {{ friend['email'] }}></label>
+    <input type="hidden" name="id" id="id" value = {{ friend['id'] }}>
+    <input type="submit" value="Edit">
+  </form>
+</body>
+</html>

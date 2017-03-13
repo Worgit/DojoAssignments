@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = "ThisIsSecret!"
 @app.route('/')
 def index():
-  return render_template('index.html')
+	return render_template('index.html')
 @app.route('/process', methods=['POST'])
 def submit():
     if len(request.form['email']) < 1:
@@ -27,10 +27,10 @@ def submit():
         return redirect('/list')
 @app.route('/list')
 def list():
-  session['yyy']=""
-  session['xxx']=mysql.query_db("SELECT mail, created_at FROM emails")
-  for data in session['xxx']:
-    temp = data['created_at'].strftime('%c')
-    session['yyy']+='<p>'+data['mail']+' '+ temp +'</p>'
-  return render_template('success.html')
+	session['yyy']=""
+	session['xxx']=mysql.query_db("SELECT mail, created_at FROM emails")
+	for data in session['xxx']:
+		temp = data['created_at'].strftime('%c')
+		session['yyy']+='<p>'+data['mail']+' '+ temp +'</p>'
+	return render_template('success.html')
 app.run(debug=True)
