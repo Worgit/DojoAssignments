@@ -4,8 +4,9 @@ from datetime import datetime
 app = Flask(__name__)
 mysql = MySQLConnector(app,'wall') #BAD NAME, DON'T DO THIS
 # the "re" module will let us perform some regular expression operations
-##import re
-##EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+import re
+import md5
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 app = Flask(__name__)
 app.secret_key = "ThisIsSecret!"
 @app.route('/')
@@ -15,9 +16,9 @@ def index():
 @app.route('/login', methods = ["POST"])
 def login():
 	email = request.form['email']
-	print "*"*80
-	print email
-	password = request.form['password']
+	##print "*"*80
+	##print email
+	password = md5.new(request.form['password']).hexdigest()
 	query = "SELECT * FROM users WHERE users.email = :email LIMIT 1"
 	data = {'email': email }
 	user = mysql.query_db(query, data)
@@ -34,10 +35,16 @@ def login():
 		return redirect ('/')
 @app.route('/register', methods = ["POST"])
 def register():
+	if len(request.form['email']) < 1 or len(request.form['first_name']) < 1 or len(request.form['last_name']) < 1 or len(request.form['password']) < 1:
+		flash("You forgot something.")
+		redirect ('/')
+	elif not EMAIL_REGEX.match(request.form['email']):
+		flash("Email not valid.")
+		redirect ('/')
 	data = {'first_name': request.form['first_name'], 
 	'last_name':  request.form['last_name'], 
 	'email': request.form['email'], 
-	'password': request.form['password']
+	'password': md5.new(request.form['password']).hexdigest()
 	}
 	query = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES (:first_name, :last_name, :email, :password, NOW(), NOW())"
 	mysql.query_db(query, data)
