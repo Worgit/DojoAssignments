@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Wall</title>
+	</head>
+	<body>
+		<div id = "header">
+			<h2>CodingDojo Wall</h2>
+			<p>Welcome {{session['name']}}!</p>
+			<form action='/logout' method='post'>
+				<input type="submit" value="Logout">
+			</form>
+		</div>
+		<p>Post a Message</p>
+		<form action='/post' method='post'>
+			<textarea name = "message"></textarea>
+			<input type="submit" value="Post">
+		</form>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					{{message|safe}}
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+	</body>
+</html>
