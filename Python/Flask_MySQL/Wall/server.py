@@ -37,10 +37,10 @@ def login():
 def register():
 	if len(request.form['email']) < 1 or len(request.form['first_name']) < 1 or len(request.form['last_name']) < 1 or len(request.form['password']) < 1:
 		flash("You forgot something.")
-		redirect ('/')
+		return redirect ('/')
 	elif not EMAIL_REGEX.match(request.form['email']):
 		flash("Email not valid.")
-		redirect ('/')
+		return redirect ('/')
 	data = {'first_name': request.form['first_name'], 
 	'last_name':  request.form['last_name'], 
 	'email': request.form['email'], 
