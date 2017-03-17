@@ -1,0 +1,27 @@
+.{
+	margin: 0px;
+	padding: 0px;
+}
+.box{
+	text-align: center;
+	display: inline-block;
+	width: 175px;
+	height: 150px;
+	border: 1px solid black;
+	margin: 5px;
+}
+#activities{
+	border: 1px solid black;
+	width: 753px;
+	overflow: scroll;
+	height: 100px;
+}
+ #activities p{
+	margin: 10px;
+}
+.red{
+	color: red;
+}
+.green{
+	color: green;
+}

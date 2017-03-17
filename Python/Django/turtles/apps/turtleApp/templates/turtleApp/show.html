@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		{% load staticfiles %}
+		{% if image %}
+			{% if image == "blue" %}
+				<img src="{% static 'turtleApp/images/leo.jpg' %}" alt = "leo">
+			{% elif image == "orange" %}
+				<img src="{% static 'turtleApp/images/mikey.jpg' %}" alt = "mikey">
+			{% elif image == "red" %}
+				<img src="{% static 'turtleApp/images/raphie.jpg' %}" alt = "raphie">
+			{% elif image == "purple" %}
+				<img src="{% static 'turtleApp/images/donnie.jpg' %}" alt = "donnie">
+			{% else %}
+				<img src="{% static 'turtleApp/images/april.jpg' %}" alt = "april">
+			{% endif %}
+		{% endif %}
+	</body>
+</html>
