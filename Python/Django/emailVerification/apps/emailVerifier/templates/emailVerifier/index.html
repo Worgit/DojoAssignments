@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Email</title>
+	</head>
+	<body>
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{ message }}</p>
+			{% endfor %}
+		{% endif %}
+		<form action = "/check" method = "post">
+			{% csrf_token %}
+			<label>Email Address:<input type = "text" name = "email" id = "email"></label>
+			<input type = "submit" value = "Submit">
+		</form>
+	</body>
+</html>
