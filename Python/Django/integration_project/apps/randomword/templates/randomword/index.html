@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Random Word</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'randomword/css/main.css' %}" media="screen" title="no title">
+	</head>
+	<body>
+		<div id = "main">
+			<p>Random word {{request.session.attempt}}</p>
+			<h1>{{request.session.word}}</h1>
+			<form action = "{% url 'random:generate' %}" method = "post">
+				{% csrf_token %}
+				<input type = "submit" name = "submit" value = "generate">
+			</form>
+		</div>
+	</body>
+</html>

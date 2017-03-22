@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+  	{% load staticfiles %}
+  	<link rel="stylesheet" type="text/css" href="{% static 'ninjagold/css/main.css' %}">
+  </head>
+  <body>
+  	<div id = "mainwrapper">
+		<p>Your Gold: {{request.session.gold}}</p>
+		<div class = "box">
+			<h2>Farm</h2>
+			<p>(earns 10-20 gold)</p>
+			<form id = farm action = "{% url 'gold:farm' %}" method = "post">
+				{% csrf_token %}
+				<input type = "submit" value = "Find Gold!">
+			</form>
+		</div>
+		<div class = "box">
+			<h2>Cave</h2>
+			<p>(earns 5-10 gold)</p>
+			<form id = cave action = "{% url 'gold:cave' %}" method = "post">
+				{% csrf_token %}
+				<input type = "submit" value = "Find Gold!">
+			</form>
+		</div>
+		<div class = "box">
+			<h2>House</h2>
+			<p>(earns 2-5 gold)</p>
+			<form id = house action = "{% url 'gold:house' %}" method = "post">
+				{% csrf_token %}
+				<input type = "submit" value = "Find Gold!">
+			</form>
+		</div>
+		<div class = "box">
+			<h2>Casino</h2>
+			<p>(earns/takes 0-50 gold)</p>
+			<form id = casino action = "{% url 'gold:casino' %}" method = "post">
+				{% csrf_token %}
+				<input type = "submit" value = "Find Gold!">
+			</form>
+		</div>
+		<div id = "wrapper">
+			<p>Activities:</p>
+			<div id = "activities">
+				<p>{{request.session.activities|safe}}</p>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

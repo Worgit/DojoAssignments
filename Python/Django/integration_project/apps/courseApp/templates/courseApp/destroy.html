@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Remove</title>
+	</head>
+	<body>
+		<h1>Are You sure that you want to delete the following course?</h1>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td>{{course.title}}</td>
+			</tr>
+			<tr>
+				<td>Description:</td>
+				<td>{{course.description}}</td>
+			</tr>
+			<form action = "{% url 'courses:back' %}" method = "post">
+				{% csrf_token %}
+				<input type = "submit" value = "No">
+			</form>
+			<form action = "{% url 'courses:delete' course.id %}" method = "post">
+				{% csrf_token %}
+				<input type = "submit" value = "Yes! I want to delete this">
+			</form>
+		</table>
+	</body>
+</html>

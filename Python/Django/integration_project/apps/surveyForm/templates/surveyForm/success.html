@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Random Word</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'surveyForm/css/success.css' %}" media="screen" title="no title">
+	</head>
+	<body>
+		<div id = "header">
+			<p>Thanks for submitting this form!  You have submitted this form {{request.session.number}} times now.</p>
+		</div>
+		<div id = "wrapper">
+			<p><span id = "underline">Submitted Information</span></p>
+			<table>
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Name:</td>
+						<td>{{request.session.name}}</td>
+					</tr>
+					<tr>
+						<td>Dojo Location:</td>
+						<td>{{request.session.dojo}}</td>
+					</tr>
+					<tr>
+						<td>Favorite Language:</td>
+						<td>{{request.session.language}}</td>
+					</tr>
+					<tr>
+						<td>Comment:</td>
+						<td>{{request.session.comment}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<form action = "{% url 'survey:back' %}" method = "post">
+				{% csrf_token %}
+				<input type = "submit" value = "Go Back">
+			</form>
+		</div>
+	</body>
+</html>
