@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		{% if session['image'] == "blue" %}
+			<img src="{{ url_for('static', filename='images/leonardo.jpg') }}" alt = "leo">
+		{% elif session['image'] == "all" %}
+			<img src="{{ url_for('static', filename='images/tmnt.png') }}" alt = "tmnt">
+		{% elif session['image'] == "orange" %}
+			<img src="{{ url_for('static', filename='images/michelangelo.jpg') }}" alt = "mikey">
+		{% elif session['image'] == "red" %}
+			<img src="{{ url_for('static', filename='images/raphael.jpg') }}" alt = "raphie">
+		{% elif session['image'] == "purple" %}
+			<img src="{{ url_for('static', filename='images/donatello.jpg') }}" alt = "donnie">
+		{% else %}
+			<img src="{{ url_for('static', filename='images/notapril.jpg') }}" alt = "april">
+		{% endif %}
+	</body>
+</html>

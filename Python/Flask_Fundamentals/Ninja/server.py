@@ -6,25 +6,27 @@ app.secret_key = 'ThisIsSecret'
 def index():
   return render_template("index.html")
 
-@app.route('/result', methods=['POST'])
-def submit():
-   print "Got Post Info"
-   session['name'] = request.form['name']
-   print "Got name Info"
-   session['dojo'] = request.form['dojo']
-   print "Got dojo Info"
-   session['language'] = request.form['language']
-   print "Got language Info"
-   session['comment'] = request.form['comment']
-   print "Got comment Info"
+@app.route('/ninja/')
+def none():
+   session['image'] = "all"
    return redirect('/result')
 @app.route('/result')
-def subIndex():
-  return render_template('submit.html')
-@app.route('/back', methods=['POST'])
-def back():
-	session.clear()
-  	return redirect('/')
+def show():
+  return render_template('show.html')
+@app.route('/ninja/<vararg>')
+def one(vararg):
+	if vararg == "blue":
+		session['image'] = "blue"
+	elif vararg == "orange":
+		session['image'] = "orange"
+	elif vararg == "red":
+		session['image'] = "red"
+	elif vararg == "purple":
+		session['image'] = "purple"
+	else:
+		session['image'] = "none"
+	print vararg
+  	return redirect('/result')
 
 
 

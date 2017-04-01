@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Add</title>
+	</head>
+	<body>
+		<h1>Add a new product</h1>
+		<form action = "/products" method = "post">
+			{% csrf_token %}
+			<p>Name</p>
+			<input type = "text" name = "name" id = "name">
+			<p>Description</p>
+			<input type = "text" name = "description" id = "description">
+			<p>Price</p>
+			<input type = "text" name = "price" id = "price">
+			<input type = "submit" value = "Create">
+		</form>
+		<a href = "/products">Go Back</a>
+	</body>
+</html>

@@ -7,7 +7,7 @@ from . import team_maker
 def index(request):
 	context = {
 		##"leagues": League.objects.all(),
-		"teams": Team.objects.annotate(num_players = Count('all_players')).filter(num_players__gt = 12),
+		"teams": Team.objects.annotate(num_players = Count('all_players')).filter(num_players__gte = 12),
 		##"players": Player.objects.all(),
 	}
 	return render(request, "leagues/index.html", context)

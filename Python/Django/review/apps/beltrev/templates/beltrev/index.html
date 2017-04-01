@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Books</title>
+	</head>
+	<body>
+		<h1>Hello, {{request.session.name}}!</h1>
+		<a href = "{% url 'beltrev:add' %}">Add Book and Review</a>
+		<a href = "{% url 'beltrev:logout' %}">Logout</a>
+		<h1>Recent Book Reviews:</h1>
+		{% for review in reviews %}
+			<a href = "{% url 'beltrev:book' review.book.id %}">{{review.book.name}}</a>
+			<p>Rating: {{review.rating}}/5</p>
+			<p><a href = "{% url 'beltrev:user' review.poster.id %}">{{review.poster.name}}</a> says: {{review.text}}</p>
+			{% if review.poster.id == request.session.id %}
+				<a href = "{% url 'beltrev:delete' review.id %}">Delete this review.</a>
+			{% endif %}
+			<p>Posted on {{review.created_at}}</p>
+		{% endfor %}
+		<h1>Other Books with Reviews:</h1>
+		{% for book in others %}
+			<a href = "{% url 'beltrev:book' book.id %}">{{book.name}}</a><br>
+		{% endfor %}
+	</body>
+</html>

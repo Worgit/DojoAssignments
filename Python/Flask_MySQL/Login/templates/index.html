@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Wall Login</title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					{{message}}
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<form action = '/login' method = 'POST'>
+			<label for="logemail">Email:<input type = "text" id = "logemail" name = "email"></label>
+			<label for="logpassword">Password:<input type = "password" id = "logpassword" name = "password"></label>
+			<input type="submit" value="Login">
+		</form>
+		<form action='/register' method='POST'>
+			<label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
+			<label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
+			<label for="email">Email:<input type="text" name="email" id="email"></label>
+			<label for="password">Password:<input type = "password" id = "password" name = "password"></label>
+			<input type="submit" value="Register">
+		</form>
+	</body>
+</html>

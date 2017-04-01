@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Add</title>
+	</head>
+	<body>
+		<a href = "{% url 'beltrev:index' %}">Home</a>
+		<a href = "{% url 'beltrev:logout' %}">Logout</a>
+		<h1>Add a New Book Title and a Review:</h1>
+		<form action = "{% url 'beltrev:add' %}" method = "post">
+			{% csrf_token %}
+			<label>Book Title:<input type = "text" name = "title" id = "title"></label>
+			<p>Author:</p>
+			<select name = "author">
+				{% for person in authors %}
+					<option value="{{person.name}}">{{person.name}}</option>
+				{% endfor %}
+			</select>
+			<p>Or add a new author:</p>
+			<input type = "text" name = "input" id = "input">
+			<p>Review:</p>
+			<textarea name = "review" id = "review"></textarea>
+			<p>Rating:</p>
+			<select name = "rating">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<input type = "submit" value = "Add Book and Review">
+		</form>
+	</body>
+</html>

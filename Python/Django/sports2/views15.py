@@ -8,7 +8,7 @@ def index(request):
 	context = {
 		"leagues": League.objects.all(),
 		"teams": Team.objects.all(),
-		"players": Player.objects.annotate(num_teams = Count('all_teams')).order_by('-num_teams'),
+		"players": Player.objects.annotate(num_teams = Count('all_teams')).order_by('num_teams'),
 	}
 	return render(request, "leagues/index.html", context)
 

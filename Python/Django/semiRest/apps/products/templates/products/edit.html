@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Add</title>
+	</head>
+	<body>
+		<h1>Edit Product {{product.id}}</h1>
+		<form action = "/products/{{product.id}}" method = "post">
+			{% csrf_token %}
+			<p>Name</p>
+			<textarea name = name>{{product.name}}</textarea>
+			<p>Description</p>
+			<textarea name = description>{{product.description}}</textarea>
+			<p>Price</p>
+			<textarea name = price>{{product.price}}</textarea>
+			<input type = "submit" value = "Update">
+		</form>
+		<a href = "/products/{{product.id}}">Show</a>
+		<a href = "/products">Back</a>
+	</body>
+</html>

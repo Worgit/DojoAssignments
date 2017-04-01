@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>User</title>
+	</head>
+	<body>
+		<a href = "{% url 'beltrev:index' %}">Home</a>
+		<a href = "{% url 'beltrev:add' %}">Add Book and Review</a>
+		<a href = "{% url 'beltrev:logout' %}">Logout</a>
+		<h1>User Alias: {{user.username}}</h1>
+		<h2>Name: {{user.name}}</h2>
+		<h2>Email: {{user.email}}</h2>
+		<h2>Total Reviews: {{user.num_reviews}}</h2>
+		<h2>Posted Reviews on the following books:</h2>
+		{% for book in books %}
+			<a href = "{% url 'beltrev:book' book.id %}">{{book.name}}</a><br>
+		{% endfor %}
+	</body>
+</html>
