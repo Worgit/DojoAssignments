@@ -69,3 +69,17 @@ class Player{
 }
 
 var testDeck: Deck = Deck()
+//print(testDeck.deal())
+testDeck.reset()
+//print(testDeck.deal())
+testDeck.reset()
+testDeck.shuffle()
+//print(testDeck.deal())
+var player: Player = Player()
+//print(player.draw(deck: testDeck))
+var test: Card = player.draw(deck: testDeck)
+print(test)
+print(player.hand)
+player.discard(drop: test)
+print(player.hand)
+
