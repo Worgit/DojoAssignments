@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B53E75C21EA6B42C0039D1E1 /* FilmDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E75C11EA6B42C0039D1E1 /* FilmDetailController.swift */; };
 		B5DAC6971EA535A20089AF42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DAC6961EA535A20089AF42 /* AppDelegate.swift */; };
 		B5DAC6991EA535A20089AF42 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DAC6981EA535A20089AF42 /* PeopleViewController.swift */; };
 		B5DAC69C1EA535A20089AF42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5DAC69A1EA535A20089AF42 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B53E75C11EA6B42C0039D1E1 /* FilmDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmDetailController.swift; sourceTree = "<group>"; };
 		B5DAC6931EA535A20089AF42 /* starwarsencyclopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = starwarsencyclopedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DAC6961EA535A20089AF42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5DAC6981EA535A20089AF42 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				B5DAC6961EA535A20089AF42 /* AppDelegate.swift */,
 				B5DAC6981EA535A20089AF42 /* PeopleViewController.swift */,
+				B53E75C11EA6B42C0039D1E1 /* FilmDetailController.swift */,
 				B5DAC69A1EA535A20089AF42 /* Main.storyboard */,
 				B5DAC6AC1EA57DFC0089AF42 /* PersonDetailController.swift */,
 				B5DAC6A81EA55CD50089AF42 /* FilmTableViewController.swift */,
@@ -149,6 +152,7 @@
 				B5DAC6991EA535A20089AF42 /* PeopleViewController.swift in Sources */,
 				B5DAC6A91EA55CD50089AF42 /* FilmTableViewController.swift in Sources */,
 				B5DAC6AD1EA57DFC0089AF42 /* PersonDetailController.swift in Sources */,
+				B53E75C21EA6B42C0039D1E1 /* FilmDetailController.swift in Sources */,
 				B5DAC6971EA535A20089AF42 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,33 +1,29 @@
 //
-//  PersonDetailController.swift
+//  FilmDetailController.swift
 //  starwarsencyclopedia
 //
-//  Created by Ezra Bergstein on 4/17/17.
+//  Created by Ezra Bergstein on 4/18/17.
 //  Copyright © 2017 Ezra Bergstein. All rights reserved.
 //
 
 import UIKit
 
-class PersonDetailController: UIViewController {
+class FilmDetailController: UIViewController {
 
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var gender: UILabel!
-    @IBOutlet weak var birth: UILabel!
-    @IBOutlet weak var mass: UILabel!
-    var nameText: String?
-    var genderText: String?
-    var birthText: String?
-    var massText: String?
-    @IBAction func back(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
+    @IBOutlet weak var director: UILabel!
+    @IBOutlet weak var opening: UILabel!
+    @IBOutlet weak var relDate: UILabel!
+    var titleText: String?
+    var directorText: String?
+    var relText: String?
+    var openText: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        name.text = nameText
-        gender.text = genderText
-        birth.text = birthText
-        mass.text = massText
-
+        name.text = titleText
+        director.text = directorText
+        relDate.text = relText
+        opening.text = openText
         // Do any additional setup after loading the view.
     }
 
@@ -36,6 +32,9 @@ class PersonDetailController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

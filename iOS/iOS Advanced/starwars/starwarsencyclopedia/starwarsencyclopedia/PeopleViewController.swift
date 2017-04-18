@@ -10,7 +10,7 @@ import UIKit
 class PeopleViewController: UITableViewController {
     // Hardcoded data for now
     var people = [String]()
-    var indexes = [String: Int]()
+    var indexes = [String: NSDictionary]()
     override func viewDidLoad() {
         super.viewDidLoad()
         StarWarsModel.getAllPeople(completionHandler: { // passing what becomes "completionHandler" in the 'getAllPeople' function definition in StarWarsModel.swift
@@ -22,8 +22,9 @@ class PeopleViewController: UITableViewController {
                         var counter = 0;
                         for person in results {
                             let personDict = person as! NSDictionary
+                            //print(personDict)
                             self.people.append(personDict["name"]! as! String)
-                            self.indexes[personDict["name"]! as! String] = counter
+                            self.indexes[personDict["name"]! as! String] = personDict
                             counter += 1
                         }
                     }
@@ -38,10 +39,10 @@ class PeopleViewController: UITableViewController {
     }
 
     
-    func add(_ name: String){
+    /*func add(_ name: String){
         people.append(name)
         //print(people)
-    }
+    }*/
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "view", sender: indexPath)
@@ -65,5 +66,21 @@ class PeopleViewController: UITableViewController {
         cell.textLabel?.text = people[indexPath.row]
         // return the cell so that it can be rendered
         return cell
+    }
+    /*func populate(personController: PersonDetailController, personDict: NSDictionary){
+        return
+    }*/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let personController = segue.destination as! PersonDetailController
+        let index = sender as! NSIndexPath
+        let person = people[index.row]
+        let info = indexes[person]!
+        let birth = info["birth_year"] as! String
+        let gender = info["gender"] as! String
+        let mass = info["mass"] as! String
+        personController.nameText = person
+        personController.birthText = birth
+        personController.genderText = gender
+        personController.massText = mass
     }
 }
