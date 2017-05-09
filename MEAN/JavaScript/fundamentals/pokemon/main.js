@@ -13,10 +13,11 @@ function newCard(){
 		name: "",
 		weight: -1
 	};
-	$.ajax({url: "http://pokeapi.co/api/v1/pokemon/" + num + "/", success: function(result){
+	$.get("http://pokeapi.co/api/v1/pokemon/" + num + "/", function(result){
 		pokemon.name = result.name;
 		pokemon.weight = result.weight;
-	}});
+	});
+	console.log(pokemon);
 	return pokemon
 }
 

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Github Info</title>
+		<meta name="description" content="my info">
+		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type = "text/javascript">
+			$(document).ready(function(){
+				$("#infoPress").click(function(){
+					$.get("https://api.github.com/users/worgit", displayName);
+					function displayName(data){
+						$("#info").html(data.login);
+					}
+				
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="infoPress">Get Info</button>
+		<p id = "info"></p>
+	</body>
+</html>

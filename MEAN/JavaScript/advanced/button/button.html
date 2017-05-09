@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript Runner</title>
+		<meta name="description" content="JavaScript">
+	</head>
+	<script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script> 
+	<body>
+		<button id="someButton">This is Some Button</button>
+		<script>
+			var color = "#0000FF"
+			$(document).ready(function(){
+             $('#someButton').click(function(){
+                //alert('you clicked the big box!');
+                if(color ==  "#0000FF"){
+                	color = "#FF0000";
+                }
+                else{
+                	color = "#0000FF"
+                }
+                $(this).css("background-color", color); 
+             })
+             $('#someButton').hover(function(){
+                //alert('you clicked the big box!');
+                $(this).css("background-color", "#008000"); 
+             	}, function(){
+             	$(this).css("background-color", color)
+             });
+          });
+		</script>
+	</body>
+</html>
