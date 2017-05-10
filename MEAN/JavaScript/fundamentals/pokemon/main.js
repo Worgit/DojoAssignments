@@ -14,19 +14,24 @@ function newCard(){
 		weight: -1
 	};
 	$.get("http://pokeapi.co/api/v1/pokemon/" + num + "/", function(result){
+		console.log("before");
 		pokemon.name = result.name;
 		pokemon.weight = result.weight;
 	});
-	console.log(pokemon);
+	console.log("after");
 	return pokemon
 }
+
+function getData
 
 function playerConstructor(name){
   player = {};
   player.name = name;
-	player.hand = [];
+  player.hand = [];
   player.addCard = function(card){
+  	//console.log(card)
     player.hand.push(card);
+    //console.log(player.hand);
   };
   return player;
 };
@@ -44,5 +49,7 @@ game.addPlayer(player2);
 game.addPlayer(player3);
 console.log(game);
 for (player in game.players){
-	console.log(player.hand);
+	for (card in game.players[player].hand){
+		console.log(game.players[player].hand[card].weight);
+	}
 }
