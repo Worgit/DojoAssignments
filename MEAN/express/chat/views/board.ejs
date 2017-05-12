@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Message Board</title>
+		<style>
+			#wrapper{
+				margin-left: auto;
+				margin-right: auto;
+				padding: 3px;
+				border: 2px solid black;
+			}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type ="text/javascript">
+			$(document).ready(function (){
+				// this triggers the connection event in our server!
+				var socket = io.connect();
+				socket.emit("init", {});
+				// we'll write all the socket stuff after the above line!
+				$('#message').submit(function (event){
+					event.preventDefault();
+					var formData = $("#message").serializeArray()
+					console.log("test1")
+					socket.emit("posting_form", {form: formData});
+				});
+				socket.on('updated_message', function (data){
+					$("#wrapper").html(data.response);
+					//console.log(data.response);
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<h1>Conversation Board</h1>
+		<div id = "wrapper">
+			<p></p>
+		</div>
+		<form id = "message">
+			<input id = "words" type = "text" name = "message">
+			<input id = "name" type = "hidden" value = "<%= name %>" name = "name">
+			<button type = "submit">Send</button>
+		</form>
+	</body>
+</html>
