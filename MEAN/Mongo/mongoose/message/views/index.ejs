@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Message Board</title>
+	</head>
+	<body>
+		<form id = "message" action = "/message" method = "post">
+			<label for="name">Name:</label>
+			<input id = "name" type = "text" name = "name">
+			<label for="message">Message:</label>
+			<textarea id = "message" name = "message"></textarea>
+			<input type = "submit" value = "Post Message">
+		</form>
+		<% for (var i = 0; i < messages.length; i++) { %>
+			<h3>Name: <%= messages[i].name %></h3>
+			<h3>Message: <%= messages[i].text %></h3>
+			<% for (var j = 0; j < messages[i].comments.length; j++) { %>
+				<p>Name: <%= messages[i].comments[j].name %></p>
+				<p>Comment: <%= messages[i].comments[j].text %></p>
+			<% } %>
+			<form id = comment action = "/message/<%= messages[i].id %>" method = "post">
+				<label for="name">Name:</label>
+				<input id = "name" type = "text" name = "name">
+				<label for="comment">Comment:</label>
+				<textarea id = "comment" name = "comment"></textarea>
+				<input type = "submit" value = "Post Comment">
+			</form>
+		<% } %>
+	</body>
+</html>
