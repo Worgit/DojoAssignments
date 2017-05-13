@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Message Board</title>
+		<style>
+			#wrapper{
+				margin-left: auto;
+				margin-right: auto;
+				padding: 3px;
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Here are the awesome quotes!</h1>
+		<div id = "wrapper">
+			<% for (var i = 0; i < quotes.length; i++) { %>
+				<p><%= quotes[i].quote %></p>
+				<p>		-<%= quotes[i].name %> at <%= quotes[i].date %></p>
+			<% } %>
+		</div>
+	</body>
+</html>
