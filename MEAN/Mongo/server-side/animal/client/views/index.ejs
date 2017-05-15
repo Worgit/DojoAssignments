@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Otters</title>
+	</head>
+	<body>
+		<% for (var i = 0; i < otters.length; i++) { %>
+			<p><%= otters[i].name %></p>
+			<form action = "/otters/edit/<%= otters[i].id %>" method = "get">
+				<input type = "submit" value = "Edit">
+			</form>
+			<form action = "/otters/destroy/<%= otters[i].id %>" method = "post">
+				<input type = "submit" value = "Delete">
+			</form>
+		<% } %>
+		<form action = "/otters/new" method = "get">
+			<input type = "submit" value = "Add New Otter">
+		</form>
+	</body>
+</html>
