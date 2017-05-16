@@ -8,12 +8,7 @@ var bodyParser = require('body-parser');
 // Integrate body-parser with our App
 app.use(bodyParser.urlencoded({ extended: true }));
 // Setting our Static Folder Directory
-app.use(express.static(path.join(__dirname, './client/static')));
-// Setting our Views Folder Directory
-app.set('views', path.join(__dirname, './client/views'));
-// Setting our View Engine set to EJS
-app.set('view engine', 'ejs');
-// Routes
+app.use(bodyParser.json());
 require('./server/config/mongoose.js')
 // Root Request
 var routes_setter = require('./server/config/routes.js');
