@@ -1,0 +1,26 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { ProductService } from './product-service.service';
+import { AppComponent } from './app.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ProductNewComponent } from './products/product-new/product-new.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ProductsComponent,
+    ProductListComponent,
+    ProductNewComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [ProductService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

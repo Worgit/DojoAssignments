@@ -1,0 +1,3 @@
+<app-note-new></app-note-new>
+<app-note-list (editEventEmitter)="getEdit($event)" ></app-note-list>
+<app-note-edit *ngIf = 'edit' [note]='note' (cancelEmitter)="cancel($event)"></app-note-edit>

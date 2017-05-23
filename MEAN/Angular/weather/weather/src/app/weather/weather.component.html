@@ -1,0 +1,12 @@
+<h1>Enter a zip code</h1>
+<form (submit)="onSubmit()">
+  <input type="text" name="code"
+  required
+  minlength="5"
+  maxlength="5"
+  pattern="\d+"
+  [(ngModel)]="zipCode"
+  #code='ngModel'>
+  {{ code.errors | json }}
+  <input type="submit">
+</form>

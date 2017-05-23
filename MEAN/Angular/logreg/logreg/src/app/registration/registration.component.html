@@ -1,0 +1,46 @@
+<form (submit)="onSubmit()">
+  <input type="text" name="email"
+  required
+  minlength="4"
+  maxlength="24"
+  pattern=”^[a-zA-Z0–9_.+-]+@[a-zA-Z0–9-]+.[a-zA-Z0–9-.]+$”
+  [(ngModel)]="user.email"
+  #email='ngModel'>
+  {{ email.errors | json }}
+  <input type="text" name="first_name"
+  required
+  minlength="4"
+  maxlength="24"
+  [(ngModel)]="user.first_name"
+  #first_name='ngModel'>
+  {{ first_name.errors | json }}
+  <input type="text" name="last_name"
+  required
+  minlength="4"
+  maxlength="24"
+  [(ngModel)]="user.last_name"
+  #last_name='ngModel'>
+  {{ last_name.errors | json }}
+  <input type="password" name="password"
+  required
+  minlength="10"
+  maxlength="24"
+  pattern="^([a-zA-Z0-9@*#]{8,15})$"
+  [(ngModel)]="user.password"
+  #password='ngModel'>
+  {{ password.errors | json }}
+  <input type="password" name="confirm"
+  required
+  minlength="10"
+  maxlength="24"
+  pattern="^([a-zA-Z0-9@*#]{8,15})$"
+  [(ngModel)]="confirm"
+  #password='ngModel'>
+  {{ password.errors | json }}
+  <select name = "language">
+    <option value = "MA">MA</option>
+    <option value = "CA">CA</option>
+    <option value = "WA">WA</option>
+  </select>
+  <input type="submit">
+</form>

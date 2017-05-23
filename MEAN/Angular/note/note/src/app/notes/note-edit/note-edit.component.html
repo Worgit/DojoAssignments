@@ -1,0 +1,7 @@
+<h1>Edit Note</h1>
+<form (submit)="submit()">
+  <input type="text" name="note" required minlength="4" [value] = "note.note" [(ngModel)]="text">
+  {{ note.errors | json }}
+  <input type="submit">
+</form>
+<button (click)="cancel()">Cancel</button>

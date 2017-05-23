@@ -1,0 +1,6 @@
+<form *ngIf = "friend" (submit) = "editFriend()">
+  <input type = "text" name = "first_name" [(ngModel)] = "friend.first_name">
+  <input type = "text" name = "last_name" [(ngModel)] = "friend.last_name">
+  <input type = "date" name = "birthday" [(ngModel)] = "friend.birthday">
+  <input type = "submit">
+</form>

@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Note</th>
+      <th>Date Created</th>
+      <th>Date Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let note of notes">
+      <td>{{ note._id }} </td>
+      <td>{{ note.note }} </td>
+      <td>{{ note.dateCreated | date: 'shortDate' }} </td>
+      <td>{{ note.dateUpdated | date: 'shortDate' }} </td>
+      <button (click)="onDelete(note)">Delete</button>
+      <button (click)="onEdit(note)">Edit</button>
+    </tr>
+  </tbody>
+</table>

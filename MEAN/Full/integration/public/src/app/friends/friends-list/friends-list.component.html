@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Birthday</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor = "let friend of friends">
+    <td>{{friend.first_name}}</td>
+    <td>{{friend.last_name}}</td>
+    <td>{{friend.birthday|date:'mediumDate'}}</td>
+    <td><button>Delete</button>
+    <a [routerLink]="[friend._id]">Show</a>
+    <a [routerLink]="['edit', friend._id]">Edit</a></td>
+  </tr>
+</table>
+
