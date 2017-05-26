@@ -1,0 +1,18 @@
+<a href = "/logout">Logout</a>
+<h1 *ngIf = "user"> Welcome {{user.name}}</h1>
+<form (submit) = "createMessage(formData)" #formData = "ngForm">
+  <label>New Message: <input type = "text" name = "message" ngModel></label>
+  <input type = "submit" value = "POST">
+</form>
+<div class = "message" *ngFor = "let message of messages">
+  <h5>{{message._user.name}} {{message.createdAt | date: 'mediumDate'}}</h5>
+  <p>{{message.message}}</p>
+  <div class = "comment" *ngFor = "let comment of message.comments">
+    <h6>{{comment._user.name}} - {{comment.createdAt | date: 'mediumDate'}}</h6>
+    <p>{{comment.comment}}</p>
+  </div>
+  <form (submit) = "createComment(formData, message._id)" #formData = "ngForm">
+    <input type = "text" name = "comment" ngModel>
+    <input type = "submit" value = "Comment">
+  </form>
+</div>

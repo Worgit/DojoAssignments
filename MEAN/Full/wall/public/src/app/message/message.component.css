@@ -1,0 +1,13 @@
+.message{
+  border: 2px solid blue;
+  padding: 2%;
+  margin: 2%;
+}
+.comment{
+  border: 2px solid orange;
+  padding: 2%;
+  margin-left: 5%;
+  margin: 2%;
+}
+div>p{  margin-left: 2vw;
+}

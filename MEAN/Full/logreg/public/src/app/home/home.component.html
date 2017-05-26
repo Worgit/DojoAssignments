@@ -1,0 +1,17 @@
+<form (submit) = "register()">
+  <input type = "text" name = "first_name" [(ngModel)] = "user.first_name">
+  <input type = "text" name = "last_name" [(ngModel)] = "user.last_name">
+  <input type = "date" name = "birthday" [(ngModel)] = "user.birthday">
+  <input type = "text" name = "email" [(ngModel)] = "user.email">
+  <input type = "password" name = "password" [(ngModel)] = "user.password">
+  <input type = "password" name = "confirm" [(ngModel)] = "confirm">
+  <input type = "submit">
+</form>
+<form (submit) = "login()">
+  <input type = "text" name = "emailalt" [(ngModel)] = "email">
+  <input type = "submit">
+</form>
+<div *ngIf = "logged">
+  <p>{{name}}</p>
+  <button (click) = "logout()">Logout</button>
+</div>
