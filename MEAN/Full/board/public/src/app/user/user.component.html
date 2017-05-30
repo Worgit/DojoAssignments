@@ -1,0 +1,8 @@
+<a [routerLink]="['../../dashboard']">DashBoard</a>
+<a href = "/logout">Logout</a>
+<h2 *ngIf = "user">Username: {{user[0].name}}</h2>
+<p>Posted:</p>
+<p *ngIf = "user">{{user[0]._topics.length}} Topic/s</p>
+<p *ngIf = "user">{{user[0].posts.length}} Post/s</p>
+<p *ngIf = "user">{{user[0]._comments.length}} Comment/s</p>
+<p *ngIf = "errors">{{errors}}</p>

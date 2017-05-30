@@ -1,0 +1,23 @@
+<a [routerLink]="['../../dashboard']">DashBoard</a>
+<a href = "/logout">Logout</a>
+<h3 *ngIf = "topic"><a [routerLink]="['../user', topic._user._id]">{{topic._user.name}}</a> posted a topic:</h3>
+<h4 *ngIf = "topic">{{topic.header}}</h4>
+<p *ngIf = "topic">Description: {{topic.description}}</p>
+<p *ngIf = "errors">{{errors}}</p>
+<h2>Post your answer here...</h2>
+<form (submit) = "makePost(formData)" #formData = "ngForm">
+  <textarea name = "description" ngModel></textarea>
+  <input type = "submit" value = "Post">
+</form>
+<div *ngIf = "topic">
+  <div *ngFor = "let post of topic.posts">
+    <h5><a [routerLink]="['../../user', post._user._id]">{{post._user.name}}</a>: {{post.description}}</h5>
+    <div *ngFor = "let comment of post._comments">
+      <p><a [routerLink]="['../../user', comment._user._id]">{{comment._user.name}}</a>: {{comment.description}}</p>
+    </div>
+    <form (submit) = "makeComment(formData, post)" #formData = "ngForm">
+      <textarea name = "description" ngModel></textarea>
+      <input type = "submit" value = "Comment">
+    </form>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<h2 *ngIf = "user">Welcome, {{user.name}}!</h2>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Topic</th>
+    <th>User Name</th>
+    <th>Posts</th>
+  </tr>
+  <tr *ngFor = "let topic of topics">
+    <td>{{topic.category}}</td>
+    <td><a [routerLink]="['../topic', topic._id]">{{topic.header}}</a></td>
+    <td><a [routerLink]="['../user', topic._user._id]">{{topic._user.name}}</a></td>
+    <td>{{topic.posts.length}}</td>
+  </tr>
+</table>
+<h2>Add a new Topic</h2>
+<form (submit) = "makeTopic(formData)" #formData = "ngForm">
+  <input type = "text" name = "header" ngModel>
+  <textarea name = "description" ngModel></textarea>
+  <label>Category: <select name = "category" ngModel>
+    <option value = "HTML">HTML</option>
+    <option value = "MEAN">MEAN</option>
+    <option value = "iOS">iOS</option>
+    <option value = "Python">Python</option>
+    <option value = "Ruby">Ruby</option>
+    <option value = "Java">Java</option>
+  </select></label>
+  <input type = "submit" value = "Submit">
+</form>
+<p *ngFor = "let error of errors">{{error}}</p>
