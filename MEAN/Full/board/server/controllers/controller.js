@@ -244,12 +244,12 @@ module.exports = {
 	likePost: (req, res) => {
 		//console.log("*********");
 		//console.log(req.body.id);
-		Topic.findOne({_id: req.params.t_id}, (err, customer) =>{
-			if(post == null){
+		Topic.findOne({_id: req.params.t_id}, (err, topic) =>{
+			if(topic == null){
 				return res.status(500).send("Topic not found")
 			} 
 			else{
-				Topic.findOne({_id: req.params.p_id}, (err, customer) =>{
+				Post.findOne({_id: req.params.p_id}, (err, post) =>{
 					if(post == null){
 						return res.status(500).send("Post not found")
 					} 
@@ -276,12 +276,12 @@ module.exports = {
 	dislikePost: (req, res) => {
 		//console.log("*********");
 		//console.log(req.body.id);
-		Topic.findOne({_id: req.params.t_id}, (err, customer) =>{
-			if(post == null){
+		Topic.findOne({_id: req.params.t_id}, (err, topic) =>{
+			if(topic == null){
 				return res.status(500).send("Topic not found")
 			} 
 			else{
-				Topic.findOne({_id: req.params.p_id}, (err, customer) =>{
+				Post.findOne({_id: req.params.p_id}, (err, post) =>{
 					if(post == null){
 						return res.status(500).send("Post not found")
 					} 

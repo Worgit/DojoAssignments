@@ -42,6 +42,16 @@ export class TopicComponent implements OnInit {
       .then( () => this.getTopic(this.topic._id))
       .catch( (err) => this.errors = err._body)
   }
+  like(post){
+    this._topicService.like(this.topic._id, post._id)
+      .then( () => this.getTopic(this.topic._id))
+      .catch( (err) => this.errors = err._body)
+  }
+  dislike(post){
+    this._topicService.dislike(this.topic._id, post._id)
+      .then( () => this.getTopic(this.topic._id))
+      .catch( (err) => this.errors = err._body)
+  }
 
 
 }

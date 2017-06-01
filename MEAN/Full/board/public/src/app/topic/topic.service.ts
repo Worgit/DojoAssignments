@@ -29,5 +29,17 @@ export class TopicService {
       .map( (comment: Response) => comment.json())
       .toPromise()
   }
+  like(t_id, p_id){
+    let temp = null;
+    return this._http.post('/topic/' + t_id + '/post/' + p_id + '/like', temp)
+      .map( (post: Response) => post.json())
+      .toPromise()
+  }
+  dislike(t_id, p_id){
+    let temp = null;
+    return this._http.post('/topic/' + t_id + '/post/' + p_id + '/dislike', temp)
+      .map( (post: Response) => post.json())
+      .toPromise()
+  }
 }
 

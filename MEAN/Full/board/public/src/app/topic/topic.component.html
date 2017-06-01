@@ -12,6 +12,10 @@
 <div *ngIf = "topic">
   <div *ngFor = "let post of topic.posts">
     <h5><a [routerLink]="['../../user', post._user._id]">{{post._user.name}}</a>: {{post.description}}</h5>
+    <button (click) = "like(post)">Like</button>
+    <button (click) = "dislike(post)">Dislike</button>
+    <p>{{post.likes}} likes</p>
+    <p>{{post.dislikes}} dislikes</p>
     <div *ngFor = "let comment of post._comments">
       <p><a [routerLink]="['../../user', comment._user._id]">{{comment._user.name}}</a>: {{comment.description}}</p>
     </div>
