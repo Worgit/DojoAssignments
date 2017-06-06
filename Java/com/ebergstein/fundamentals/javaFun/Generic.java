@@ -18,18 +18,14 @@ public class Generic{
     	}
 	}*/
 	public void test(){
-		ArrayList myList = new ArrayList();
+		ArrayList<Integer> myList = new ArrayList();
     	myList.add("13");
     	myList.add("hello world");
     	myList.add(48);
     	myList.add("Goodbye World");
     	for(int i = 0; i < myList.size(); i++){
-    		check(myList.get(i));
+    		int castedValue = (Integer)element;
     	}
-    }
-    public <E extends Integer> void check(E element){
-    	int castedValue = (Integer)element;
-    	System.out.println(castedValue);
     }
 	
 }
