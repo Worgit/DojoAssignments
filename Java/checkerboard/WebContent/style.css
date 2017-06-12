@@ -1,0 +1,14 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+.blue{
+	background-color: skyblue;
+	display: inline-block;
+	padding: 16px;
+}
+.pink{	
+	background-color: salmon;
+	display: inline-block;
+	padding: 16px;
+}

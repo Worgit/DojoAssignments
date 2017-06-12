@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Pet Info</display-name>
+  <description>User Info application</description>
+  <servlet>
+    <servlet-name>ShowDog</servlet-name>
+    <servlet-class>com.ebergstein.pets.controllers.ShowDog</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowDog</servlet-name>
+    <url-pattern>/showdog</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>ShowCat</servlet-name>
+    <servlet-class>com.ebergstein.pets.controllers.ShowCat</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowCat</servlet-name>
+    <url-pattern>/showcat</url-pattern>
+  </servlet-mapping>
+</web-app>

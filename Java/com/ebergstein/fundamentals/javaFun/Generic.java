@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 //class 
 public class Generic{
+	//pre-generics
 	/*public void test(){
 		ArrayList myList = new ArrayList();
     	myList.add("13");
@@ -17,6 +18,7 @@ public class Generic{
     		}
     	}
 	}*/
+	//using generics, will not compile
 	public void test(){
 		ArrayList<Integer> myList = new ArrayList();
     	myList.add("13");

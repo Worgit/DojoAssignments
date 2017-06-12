@@ -1,0 +1,7 @@
+Display name seems like the header of the page.
+Servlet looks like a module of some kind.
+Servlet-name is the servlet's name.
+Servlet-class is the actual servlet that Servlet is referencing.
+Servlet mapping is the url path for a servlet.
+Url pattern is the path.
+Welcome file is the index.

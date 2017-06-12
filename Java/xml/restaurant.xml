@@ -1,0 +1,84 @@
+<? xml version="1.0" encoding="UTF-8">
+<menuListing>
+	<menu category = "lunchMenu">
+		<item category="entree">
+			<name>Chicken Salad</name>
+			<description>A salad with chicken</description>
+			<price>$10.99</price>
+		</item>
+		<item category="entree">
+			<name>Chicken Sandwich</name>
+			<description>A sandwich with chicken</description>
+			<price>$12.99</price>
+		</item>
+		<item category="entree">
+			<name>Pastrami Sandwich</name>
+			<description>A sandwich made with pastrami</description>
+			<price>$13.99</price>
+		</item>
+		<item category="beverage">
+			<name>Coca-Cola</name>
+			<description>A fizzy cola soda</description>
+			<price>$0.99</price>
+		</item>
+		<item category="beverage">
+			<name>Orange Juice</name>
+			<description>A juice made with orange</description>
+			<price>$0.99</price>
+		</item> 
+	</menu>
+	<menu category = "breakfastMenu">
+		<item category="entree">
+			<name>Breakfast Burrito</name>
+			<description>A breakfast burrito</description>
+			<price>$10.99</price>
+		</item>
+		<item category="entree">
+			<name>Cheese Omelet</name>
+			<description>A cheese omelet</description>
+			<price>$12.99</price>
+		</item>
+		<item category="entree">
+			<name>Cereal</name>
+			<description>Overpriced cereal</description>
+			<price>$13.99</price>
+		</item>
+		<item category="beverage">
+			<name>Grapefruit Juice</name>
+			<description>Freshly squeezed grapefruit juice</description>
+			<price>$0.99</price>
+		</item>
+		<item category="beverage">
+			<name>Coffee</name>
+			<description>It&apos;s just coffee</description>
+			<price>$0.99</price>
+		</item> 
+	</menu>
+	<menu category = "dinnerMenu">
+		<item category="entree">
+			<name>Chicken Salad</name>
+			<description>A salad with chicken</description>
+			<price>$10.99</price>
+		</item>
+		<item category="entree">
+			<name>Chicken Sandwich</name>
+			<description>A sandwich with chicken</description>
+			<price>$12.99</price>
+		</item>
+		<item category="entree">
+			<name>Pastrami Sandwich</name>
+			<description>A sandwich made with pastrami</description>
+			<price>$13.99</price>
+		</item>
+		<item category="beverage">
+			<name>Coca-Cola</name>
+			<description>A fizzy cola soda</description>
+			<price>$0.99</price>
+		</item>
+		<item category="beverage">
+			<name>Orange Juice</name>
+			<description>A juice made with orange</description>
+			<price>$0.99</price>
+		</item> 
+	</menu>
+</menuListing>
